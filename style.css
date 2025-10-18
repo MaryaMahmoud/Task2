@@ -1,0 +1,139 @@
+:root {
+  --main-bg: hsl(233, 47%, 7%);
+  --card-bg: hsl(244, 38%, 16%);
+  --accent: hsl(277, 64%, 61%);
+  --white: hsl(0, 0%, 100%);
+  --white-main: hsla(0, 0%, 100%, 0.75);
+  --white-stat: hsla(0, 0%, 100%, 0.6);
+  --font-main: 'Inter', sans-serif;
+  --font-alt: 'Lexend Deca', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--main-bg);
+  color: var(--white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  max-width: 1200px; 
+  width: 100%;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card-text {
+  flex: 1;
+  padding: 70px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-text h1 {
+  font-size: 2.3rem;
+  margin-bottom: 25px;
+  line-height: 1.2;
+}
+
+.highlight {
+  color: var(--accent);
+}
+
+.card-description {
+  color: var(--white-main);
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 50px;
+  max-width: 420px;
+}
+
+.stats {
+  display: flex;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.stat h2 {
+  color: var(--white);
+  font-size: 1.8rem;
+  margin-bottom: 5px;
+}
+
+.stat p {
+  font-family: var(--font-alt);
+  color: var(--white-stat);
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.card-image {
+  flex: 1.2;
+  background-image: linear-gradient(
+      rgba(92, 9, 144, 0.782),
+      rgba(102, 19, 154, 0.5)
+    ),
+    url("images/image-header-desktop.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 992px) {
+  .card {
+    flex-direction: column-reverse;
+    text-align: center;
+    max-width: 90%;
+  }
+
+  .card-text {
+    padding: 50px 30px;
+  }
+
+  .card-description {
+    margin: 0 auto 40px;
+    max-width: 100%;
+  }
+
+  .stats {
+    justify-content: center;
+    gap: 40px;
+  }
+
+  .card-image {
+    height: 280px;
+    background-image: linear-gradient(
+        rgba(170, 92, 219, 0.5),
+        rgba(170, 92, 219, 0.5)
+      ),
+      url("images/image-header-mobile.jpg");
+  }
+}
+
+@media (max-width: 480px) {
+  .card-text {
+    padding: 40px 20px;
+  }
+
+  .card-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .stat h2 {
+    font-size: 1.4rem;
+  }
+}
